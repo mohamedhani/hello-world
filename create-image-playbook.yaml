@@ -1,0 +1,12 @@
+- name: create docker image playbook
+  host: localhost
+  tasks:
+  - name: delete old image
+    command: docker rmi 137265817571.dkr.ecr.us-east-1.amazonaws.com/test-tomcat
+    ignore_errors: yes
+  - name: create image
+    command: docker build . --tag 137265817571.dkr.ecr.us-east-1.amazonaws.com/test-tomcat
+    args: 
+      chdir: /opt/ansadmin
+  - name: push image to registry
+    command: docker push 137265817571.dkr.ecr.us-east-1.amazonaws.com/test-tomcat
