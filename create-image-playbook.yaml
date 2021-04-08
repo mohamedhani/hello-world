@@ -1,5 +1,5 @@
 - name: create docker image playbook
-  host: localhost
+  hosts: localhost
   tasks:
   - name: delete old image
     command: docker rmi 137265817571.dkr.ecr.us-east-1.amazonaws.com/test-tomcat
