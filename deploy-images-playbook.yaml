@@ -12,5 +12,5 @@
     ignore_errors: yes
 
   - name: create container
-    command: docker run -p 8080:8080 --name tomcat-test 137265817571.dkr.ecr.us-east-1.amazonaws.com/test-tomcat
+    command: docker run -d -p 8080:8080 --name tomcat-test 137265817571.dkr.ecr.us-east-1.amazonaws.com/test-tomcat
     
