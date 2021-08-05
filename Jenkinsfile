@@ -25,7 +25,10 @@ pipeline{
             }
         }
         stage('stage2')
-        {
+        {  when{
+               branch 'master'
+                }
+
             parallel{
                 stage('stage2-1-parralel'){
                     steps{
