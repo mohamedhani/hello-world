@@ -15,7 +15,9 @@ pipeline{
     triggers{ githubPush()}
     stages{
         stage('stage1-sequance')
-        {
+        { when{
+               branch 'testing'
+		}
             steps{
                 echo "welcome from ${CITY_NAME}"
                 echo "myname is ${GIT_HUB_CRE_USR}"
